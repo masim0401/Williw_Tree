@@ -1,0 +1,37 @@
+.add-photo {
+  input[type="file"] {
+  display: none;
+  }
+  .custom-file-upload {
+    background: url("../images/icons/camera-plus.svg") no-repeat left;
+    cursor: pointer;
+    padding-left: 28px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #FF5100;
+  }
+  .add-photo__wrap {
+    display: flex;
+    #filePreview {
+      display: none;
+      width: 168px;
+      height: 95px;
+    }
+    .remove-photo {
+      display: none;
+      margin-left: 16px;
+      align-items: center;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 21px;
+      color: #FF5100;
+      img {
+        display: block;
+        margin-left: 4px;
+      }
+    }
+  }
+}
+
+

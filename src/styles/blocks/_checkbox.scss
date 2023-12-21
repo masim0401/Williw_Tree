@@ -1,0 +1,43 @@
+.checkbox {
+  text-transform: full-width;
+  label {
+    display: block;
+    position: relative;
+    padding-left: 20px;
+  }
+  label input {
+    display: none; /* <--скрываем дефолтный чекбокс */
+  }
+
+  label span { /* <-- стилизируем новый */
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    top: 1px;
+    margin-right: 4px;
+    left: 0;
+    border-radius: 4px;
+    border: 1px solid #E3E3E3;
+    display: inline-block;
+    background-color: #FFF;
+    padding: 3px;
+    &:hover {
+      background-color: #FF5100;
+    }
+  }
+
+  [type=checkbox]:checked + span:before { /* <-- ставим иконку, когда чекбокс включен  */
+    content: '';
+    background: #FF5100 url("../images/icons/check.svg") no-repeat center  ;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    border-radius: 4px;
+    top: -1px;
+    left: -1px;
+    font-size: 12px;
+    color: white;
+  }
+}
+

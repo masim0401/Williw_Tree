@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body, html {
+  color: #000;
+  margin: 0;
+  height: 100%;
+}
+
+html {
+  min-height: 600px;
+
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  height: auto;
+  background: #F8F8F8;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+

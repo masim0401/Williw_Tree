@@ -1,0 +1,111 @@
+@media (max-width: 675px) {
+ .form-block {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   max-width: 375px;
+   margin-top: 0;
+   margin-bottom: 0;
+   border-radius: 0;
+   .thanks {
+     flex: 1 1;
+   }
+   .header {
+     max-width: 600px;
+     padding: 20px 25px;
+   }
+   .logo {
+     width: 112px;
+     height: 112px;
+     padding: 44px 6px;
+     left: 25px;
+     img {
+       width: 100px;
+       height: 24px;
+     }
+   }
+   .rating {
+     margin-top: 0;
+     &__bubble {
+       display: flex;
+       justify-content: space-between;
+       align-items: flex-start;
+       align-self: stretch;
+       span {
+         width: 28px;
+         height: 28px;
+         font-size: 16px;
+         padding: 5px;
+       }
+     }
+   }
+   .form-wrap {
+     max-width: 375px;
+     padding: 72px 10px 16px;
+     .form-group {
+       .form-label {
+         font-size: 16px;
+         line-height: 18px;
+       }
+       input {
+         max-width: 100%;
+       }
+       legend {
+         font-size: 16px;
+       }
+       label {
+         font-size: 14px;
+         line-height: 17px;
+       }
+       .form-textarea {
+         max-width: 100%;
+       }
+       .iti input, .iti input[type=text], .iti input[type=tel] {
+         max-width: 355px;
+       }
+     }
+     .rating__text {
+       font-size: 14px;
+     }
+
+     .rating__text-two {
+       font-size: 14px;
+     }
+
+     .form-group.rating-bubble {
+       margin-top: 0;
+     }
+
+     button {
+       max-width: 100%;
+     }
+
+     .form-textarea {
+       font-size: 14px;
+     }
+
+     .form-input {
+       font-size: 14px;
+     }
+   }
+ }
+  .anonymous {
+    label {
+      font-size: 16px;
+    }
+  }
+}
+@media (max-width: 375px) {
+  .form-block {
+    .form-wrap {
+      .form-group {
+        .iti input, .iti input[type=text], .iti input[type=tel] {
+          max-width: 94vw;
+        }
+      }
+    }
+  }
+}
+
+
+

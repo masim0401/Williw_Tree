@@ -1,0 +1,25 @@
+.thanks {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: #FFFFFF;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  padding: 155px 0 155px;
+  img {
+    width: 139px;
+    height: 188px;
+    margin: 0 auto 16px;
+  }
+  h1 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23px;
+  }
+  h2 {
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+  }
+}

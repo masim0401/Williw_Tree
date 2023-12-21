@@ -1,0 +1,16 @@
+.stars {
+  display: flex;
+  flex-direction: row;
+  &__item {
+    background-image: url("../images/icons/Star.svg");
+    background-repeat: no-repeat;
+    margin-top: 16px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    &_active {
+      background-image: url("../images/icons/StarOrange.svg");
+
+    }
+  }
+}

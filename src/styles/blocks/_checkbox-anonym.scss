@@ -1,0 +1,15 @@
+.anonymous {
+  margin: 16px 0;
+  border: 0 none;
+  .anonymous__text {
+    margin-top: 16px;
+    color: var(--On-bg, #111);
+    font-size: 12px;
+    font-weight: 400;
+    a {
+      text-decoration: underline;
+      text-underline-offset: 2.4px;
+      color: var(--On-bg, #111);
+    }
+  }
+}

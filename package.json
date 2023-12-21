@@ -1,0 +1,24 @@
+{
+  "name": "temp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx mix",
+    "watch": "npx mix watch",
+    "prod": "npx mix --production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.3.1",
+    "laravel-mix": "^6.0.25",
+    "postcss": "^8.3.6",
+    "sass": "^1.35.2",
+    "sass-loader": "^12.1.0"
+  },
+  "dependencies": {
+    "intl-tel-input": "^18.3.3"
+  }
+}
