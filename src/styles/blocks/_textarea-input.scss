@@ -1,5 +1,4 @@
 .form-textarea {
-  color: var(--Placeholder, #D1D1D1);
   font-size: 16px;
   line-height: 125%; /* 20px */
   margin-top: 8px;
@@ -9,7 +8,13 @@
   resize: none;
   padding: 13px 14px 13px;
   border: 1px solid #E3E3E3;
+  &:focus {
+    border-color: #FF5100;
+  }
   &:hover {
     border: 1px solid #FF5100;
   }
+}
+textarea::placeholder {
+  color: #D1D1D1;
 }

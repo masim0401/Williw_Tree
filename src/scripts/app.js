@@ -74,3 +74,57 @@ const phone = document.querySelector("#phone");
 intlTelInput(phone, {
     initialCountry: 'ua'
 });
+
+const form = document.querySelector('.form-block');
+
+const formValidator = (() => {
+    const clearErrors = () => {
+        const errorMessage = document.querySelectorAll('.form-error');
+        const removeError = document.querySelectorAll('input');
+        removeError.forEach(el => el.classList.remove('error'));
+        errorMessage.forEach(el => el.textContent = '');
+        errorMessage.forEach(el => el.style.display = 'none');
+    }
+    const showError = (key, message) => {
+        const name = document.getElementById(key);
+        const inputParent = name.closest('.form-group');
+        const inputError  = inputParent.querySelector('.form-error');
+        name.classList.add('error');
+        inputError.textContent = message;
+        inputError.style.display = 'block';
+    }
+    const validate = (formData) => {
+        let hasError = false;
+        clearErrors();
+        if (!formData.get('email')) {
+            showError('email', 'Це поле повинно бути заповнене');
+            hasError = true;
+        }
+        if (!formData.get('phone')) {
+            showError('phone', 'Це поле повинно бути заповнене');
+            hasError = true;
+        }
+        return !hasError
+    }
+
+    return {validate}
+})()
+
+form.addEventListener('submit', saveForm);
+async function saveForm(event){
+    event.preventDefault();
+    const formData = new FormData(form);
+    if (!formValidator.validate(formData)) {}
+    else {
+        await  fetch('http://localhost:8080/form',{
+            method: 'POST',
+            body: formData
+        });
+    }
+
+    // form.reset();
+}
+
+
+
+

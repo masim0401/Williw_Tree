@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./styles/app.css">
 </head>
 <body>
-    <form class="form-block">
+    <form novalidate class="form-block">
         <div class="header">
             <div class="switch-lang">
                 <div class="switch-lang__language"><img src="images/icons/ukrainian.svg" alt="ukrainian"></div>
@@ -85,17 +85,17 @@
             <fieldset class="form-group radiobutton">
                     <legend class="form-label"><span class="form-group_orange">*</span> Питання для Radiobutton</legend>
                     <label class="label-radio">
-                        <input type="radio" name="answer" value="K" />
+                        <input type="radio" name="questionOne" value="veryLongAnswer" />
                         <span></span>
                         Очень длинный ответ который должен показать как будет вести себя текст если он длиннее одной строчки
                     </label><br />
                     <label class="label-radio">
-                        <input type="radio" name="answer" value="S" />
+                        <input type="radio" name="questionOne" value="Yes" />
                         <span></span>
                         Так
                     </label><br />
                     <label class="label-radio">
-                        <input type="radio" name="answer" value="M" />
+                        <input type="radio" name="questionOne" value="No" />
                         <span></span>
                         Ні
                     </label>
@@ -103,17 +103,17 @@
             <fieldset class="form-group checkbox">
                 <legend class="form-label"><span class="form-group_orange">*</span> Питання для Checkbox</legend>
                 <label class="checkbox__label">
-                <input class="form-checkbox" type="checkbox" name="answer" value="K" />
+                <input class="form-checkbox" type="checkbox" name="questionTwo" value="veryLongAnswer" />
                     <span></span>
                     Очень длинный ответ который должен показать как будет вести себя текст если он длиннее одной строчки
                 </label><br />
                 <label>
-                <input class="form-checkbox" type="checkbox" id="checkbox-two" name="answer" value="S" />
+                <input class="form-checkbox" type="checkbox" id="checkbox-two" name="questionTwo" value="Yes" />
                     <span></span>
                     Так
                 </label><br />
                 <label>
-                <input class="form-checkbox" type="checkbox" id="checkbox-three" name="answer" value="M" />
+                <input class="form-checkbox" type="checkbox" id="checkbox-three" name="questionTwo" value="No" />
                     <span></span>
                     Ні
                 </label>
@@ -142,7 +142,7 @@
             </div>
             <fieldset class="form-group add-photo">
                 <label class="custom-file-upload">
-                    <input id="fileUpload" name="photo" type="file" accept="image/png, image/jpeg">
+                    <input id="fileUpload" name="photo" type="file" accept="image/png, image/jpeg" value="" >
                     Додати фото
                 </label>
                  <div class="add-photo__wrap">
@@ -155,14 +155,14 @@
             </fieldset>
             <div class="form-group">
                 <label class="form-label comment" for="comment"><span class="form-group_orange">* </span>Залишити коментар</label>
-                <textarea class="form-textarea" id="comment" name="comment" required placeholder="Коментар" value="ff"></textarea>
+                <textarea class="form-textarea" id="comment" name="comment" required placeholder="Коментар" value="comment"></textarea>
                 <div class="form-error"></div>
             </div>
-            <div class="form-group">
-                <label class="form-label error" for="text"><span class="form-group_orange">*</span> Инпут Error</label>
-                <input class="form-input error" id="text" name="text" required placeholder="example" type="text">
-                <div class="form-error">Це поле повинно бути заповнене</div>
-            </div>
+<!--            <div class="form-group">-->
+<!--                <label class="form-label error" for="text"><span class="form-group_orange">*</span> Инпут Error</label>-->
+<!--                <input class="form-input error" id="text" name="text" required placeholder="example" type="text">-->
+<!--                <div class="form-error">Це поле повинно бути заповнене</div>-->
+<!--            </div>-->
             <div class="form-group">
                     <label class="form-label" for="email">Ваш Email <span class="form-group_orange">*</span></label>
                     <input class="form-input" id="email" name="email" required placeholder="example@gmail.com" type="email">
@@ -171,7 +171,7 @@
             <div class="form-group">
                 <label class="form-label" for="phone">Номер телефону <span class="form-group_orange">*</span></label>
                 <input class="form-input" id="phone" name="phone" type="text">
-                <div class="form-error"></div>
+                <div class="form-error">Це поле повинно бути заповнене</div>
             </div>
             <fieldset class="checkbox anonymous">
                 <label class="form-label" for="anonymous">
@@ -181,7 +181,7 @@
                 </label>
                 <div class="anonymous__text">Вказуючи номер телефону або email Ви погоджуєтеся з <br>нашою <a href="#">політикою конфіденційності</a></div>
             </fieldset>
-            <button class="btn">Надіслати</button>
+            <button class="btn" type="submit" >Надіслати</button>
         </div>
         <div class="footer">
                 <img src="images/logo/LogoQBtools.svg" alt="qb_tools">

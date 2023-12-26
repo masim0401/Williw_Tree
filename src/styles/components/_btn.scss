@@ -12,4 +12,10 @@
   text-align: center;
   color: #FFFFFF;
   cursor: pointer;
+  &:hover {
+    background: var(--Primary-hover, #FF6219);
+  }
+  &:active {
+    background: var(--Primary-active, #E64900);
+  }
 }
