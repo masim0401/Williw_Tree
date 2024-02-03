@@ -1,5 +1,6 @@
 import intlTelInput from 'intl-tel-input';
 import 'intl-tel-input/build/js/utils';
+import {validatePhoneNumberLength} from "libphonenumber-js";
 
 const stars = document.querySelectorAll('.stars');
 stars.forEach(star => {
@@ -72,13 +73,38 @@ input.addEventListener('change',previewPhoto);
 
 const phone = document.querySelector("#phone");
 intlTelInput(phone, {
-    initialCountry: 'ua',
-    PreferredCountries: null,
+    initialCountry: "ua",
+    onlyCountries: ["ua", "au", "at", "az", "al", "ar", "be", "bg", "gb", "hu", "de", "gr", "dk", "il", "ie",
+        "is", "es", "it", "kz", "ca", "kg", "lv", "lt", "md", "nl", "no", "ae", "pl", "pt", "ro", "rs", "sk",
+        "sl", "us", "tj", "tr", "tm", "uz", "fi", "fr", "hr", "me", "cz", "ch", "se", "ee", "jp"],
+    preferredCountries: [],
+
+    dropdownContainer: document.body,
+    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
 });
+
+phone.addEventListener("countrychange", (e) => {
+    e.target.value = '';
+});
+
+phone.addEventListener("input", function (event) {
+    let inputValue = event.target.value;
+
+    let numericValue = inputValue.replace(/\D/g, "");
+
+    if (numericValue.length > 16) {
+        numericValue = numericValue.slice(0, 16);
+    }
+
+    event.target.value = numericValue;
+});
+
+
 
 const form = document.querySelector('.form-block');
 
 const formValidator = (() => {
+
     const clearErrors = () => {
         const errorMessage = document.querySelectorAll('.form-error');
         const removeError = document.querySelectorAll('input');
@@ -94,20 +120,37 @@ const formValidator = (() => {
         inputError.textContent = message;
         inputError.style.display = 'block';
     }
+
+    const validateFormPhoneInput = (input) => {
+        let hasError = false
+        console.log(window.intlTelInputGlobals)
+        const itiInstance = window.intlTelInputGlobals.getInstance(input);
+        const {iso2} = itiInstance.getSelectedCountryData()
+        hasError = validatePhoneNumberLength(input.value, iso2.toUpperCase())
+        if (hasError) {
+            showError('phone', 'Невірний формат телефону')
+        }
+        return hasError;
+    }
+
     const validate = (formData) => {
+        const inputPhone = form.querySelector('input[name="phone"]');
         let hasError = false;
         clearErrors();
         if (!formData.get('email')) {
             showError('email', 'Це поле повинно бути заповнене');
             hasError = true;
         }
-        if (!formData.get('phone')) {
-            showError('phone', 'Це поле повинно бути заповнене');
-            hasError = true;
+        if (inputPhone) {
+            if (!formData.get('phone')) {
+                showError('phone', 'Це поле повинно бути заповнене');
+                hasError = true;
+            } else {
+                hasError = validateFormPhoneInput(inputPhone);
+            }
         }
         return !hasError
     }
-
     return {validate}
 })()
 

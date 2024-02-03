@@ -19,6 +19,7 @@
     "sass-loader": "^12.1.0"
   },
   "dependencies": {
-    "intl-tel-input": "^18.3.3"
+    "intl-tel-input": "^18.3.3",
+    "libphonenumber-js": "^1.10.55"
   }
 }
