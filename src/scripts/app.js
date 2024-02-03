@@ -72,7 +72,8 @@ input.addEventListener('change',previewPhoto);
 
 const phone = document.querySelector("#phone");
 intlTelInput(phone, {
-    initialCountry: 'ua'
+    initialCountry: 'ua',
+    PreferredCountries: null,
 });
 
 const form = document.querySelector('.form-block');
